@@ -24,7 +24,7 @@ server.use((req, res, next) => {
 function checkProjectExists(req, res, next) {
   const { id } = req.params;
 
-  const project = projects.map(p => p.id == id);
+  const project = projects.find(p => p.id == id);
 
   if (!project) {
     return res
